@@ -63,14 +63,6 @@
     console.log("Copy : %d", copy.length);
     if (copy.length > 0) {
       document.addEventListener("copy", func_copy, true);
-      try {
-        var res = confirm("是否复制到剪贴板");
-        if (res === true) {
-          document.execCommand("copy");
-          alert("已复制" + copy.length + "项到剪贴板!");
-        }
-      } finally {
-      }
     }
 
     console.log("Open : %d", open.length);
@@ -82,9 +74,9 @@
     }
 
     function func_copy(e) {
-      e.clipboardData.setData("text/plain", copy.join("\r"));
+      e && e.clipboardData.setData("text/plain", copy.join("\r"));
       e.preventDefault();
-      document.removeEventListener("copy", func_copy, true);
+      console.log("已复制" + copy.length + "项到剪贴板!");
     }
 
     function push_open(url) {
