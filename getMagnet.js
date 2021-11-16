@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  页面加载完成后，复制页面磁力链接到剪贴板
 // @author       You
-// @match        http://*/*
+// @match        *://*/*
 // @grant        none
 // ==/UserScript==
 (function () {
@@ -76,7 +76,7 @@
     function func_copy(e) {
       e && e.clipboardData.setData("text/plain", copy.join("\r"));
       e.preventDefault();
-      console.log("已复制" + copy.length + "项到剪贴板!");
+      alert("已复制" + copy.length + "项到剪贴板!");
     }
 
     function push_open(url) {
