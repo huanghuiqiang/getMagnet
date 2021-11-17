@@ -13,7 +13,7 @@
   });
 
   function getTorrent() {
-    var rules = [{ tags: "a", attr: "href" }, { tags: "span,p" }];
+    var rules = [{ tags: "a", attr: "href" }, { tags: "span,p,li" }];
     var matchs = [
       {
         re: /\bmagnet:\?xt=urn:btih:[a-z0-9]{32,}.*\b/i,
